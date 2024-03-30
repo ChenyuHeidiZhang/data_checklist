@@ -1,0 +1,98 @@
+# CHECKLIST CONFIGS
+# comment out test types that you don't want to run
+check_types:
+  # - feasibility
+  # - exclusivity
+  # - sufficiency
+  # - necessity
+  - regular_vinfo
+
+# whether to run checklist on the train set instead of the eval set
+eval_on_train: false
+
+do_inference: true
+
+test_margin: 0.01
+
+# Needed and only used when running feasibility or sufficiency test.
+# If multiple functions are specified, they'd be chained in order.
+attribute_func:
+  null
+  # - 'shp_word_length'
+  # - 'dwmw_vocab'
+  # - 'dwmw_sentiment'
+
+# Needed and only used when running exclusivity or necessity tests.
+inverse_attribute_func:
+  null
+  # - 'inv_dwmw_vocab'
+
+# Needed and only used when running sufficiency, necessity, or regular_vinfo test.
+# Should be specified when using multiple keys in the input example, or if the base input field needs to be transformed.
+# Otherwise the default 'std' should be fine.
+std_transform_func: 'std'
+# std_transform_func: 'std_nli'
+# std_transform_func: 'dwmw_vocab'
+
+# Needed and only used when running feasibility, exclusivity, or regular_vinfo test.
+null_transform_func: 'null'
+
+# saves model evals, the PVI and check results to this directory
+output_dir: 'checklist_out'
+# for checkpoints
+model_output_dir: '~/checklist_models/t5-base'
+
+# the maximum allowed length for an input (prompt + response)
+max_length: 512
+
+# the maximum allowed length for a prompt
+max_prompt_length: 510
+max_output_length: 2
+
+batch_size: 2
+
+# random seed for batch sampling
+seed: 0
+
+cache_dir: ~/.cache/
+
+# no need to change this:
+exp_prefix: None
+model_is_causal_lm: false
+
+# training args (transformers)
+do_train: true # use pretrained models saved at model_output_dir if do_train is false
+use_slow_tokenizer: false
+overwrite_output_dir: false
+gradient_accumulation_steps: 8
+push_to_hub: false
+hub_token: null
+trust_remote_code: false
+weight_decay: 0.0
+learning_rate: 0.0005
+max_train_steps: null
+num_train_epochs: 2
+lr_scheduler_type: linear
+num_warmup_steps: 0
+checkpointing_steps: epoch
+pad_to_max_length: false
+
+
+# when the task is essentially classification, gather class logits for computing vinfo (the pvis actually don't change much)
+gather_class_logits: false
+class_labels:
+  - 'A'
+  - 'B'
+
+# wandb
+wandb:
+  enabled: true
+  entity: null
+  project: "data-checklist"
+
+
+
+
+
+
+

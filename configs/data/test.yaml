@@ -1,0 +1,13 @@
+# specify either huggingface data name or local data filenames
+hf_data_name: null
+data_filenames:
+  train: test/data/test_dataset.csv
+  validation: test/data/test_dataset.csv
+data_type: csv
+train_split_name: train
+eval_split_name: validation
+
+input_key: 'sentence1'
+output_key: 'label'
+additional_input_keys: null
+

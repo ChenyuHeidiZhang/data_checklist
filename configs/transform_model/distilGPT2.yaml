@@ -1,0 +1,7 @@
+model_name_or_path: distilgpt2
+tokenizer_name: distilgpt2
+
+task_type: "CAUSAL_LM"
+dtype: float32
+batch_size: 32
+

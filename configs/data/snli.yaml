@@ -1,0 +1,11 @@
+# specify either huggingface data name or local data filenames
+hf_data_name: snli
+data_filenames: null
+train_split_name: train
+eval_split_name: validation
+
+input_key: 'premise'
+output_key: 'label'
+additional_input_keys:
+  - 'hypothesis'
+

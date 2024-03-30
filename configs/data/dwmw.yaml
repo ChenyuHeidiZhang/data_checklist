@@ -1,0 +1,13 @@
+# specify either huggingface data name or local data filenames
+hf_data_name: null
+data_filenames:
+  train: test/data/dwmw/labeled_data.csv
+  validation: test/data/dwmw/labeled_data.csv
+data_type: csv
+train_split_name: train
+eval_split_name: validation
+
+input_key: 'tweet'
+output_key: 'class'
+additional_input_keys: null
+

@@ -1,0 +1,15 @@
+# specify either huggingface data name or local data filenames
+hf_data_name: stanfordnlp/shp
+hf_datadir_name: askscience
+data_filenames: null
+train_split_name: train
+eval_split_name: validation
+
+input_key: 'history'
+output_key: 'labels'
+additional_input_keys:
+  - 'human_ref_A'
+  - 'human_ref_B'
+
+ratio_thresh: 2.0
+examples_per_post: 5

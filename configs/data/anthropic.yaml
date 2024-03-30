@@ -1,0 +1,10 @@
+# specify either huggingface data name or local data filenames
+hf_data_name: Anthropic/hh-rlhf
+hf_datadir_name: harmless-base # optional field: harmless-base, or helpful-base
+data_filenames: null
+train_split_name: train
+eval_split_name: test
+
+input_key: 'chosen'
+output_key: null
+additional_input_keys: null

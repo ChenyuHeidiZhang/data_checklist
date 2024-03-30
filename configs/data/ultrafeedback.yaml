@@ -1,0 +1,8 @@
+hf_data_name: HuggingFaceH4/ultrafeedback_binarized
+data_filenames: null
+train_split_name: train_prefs
+eval_split_name: test_prefs
+
+input_key: 'chosen'
+output_key: null
+additional_input_keys: null

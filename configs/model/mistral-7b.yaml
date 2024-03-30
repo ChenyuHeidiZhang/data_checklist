@@ -1,0 +1,16 @@
+model_name_or_path: mistralai/Mistral-7B-v0.1
+tokenizer_name: mistralai/Mistral-7B-v0.1
+block_name: MistralDecoderLayer
+# NOTE: update block name accordingly in accelerate_config if using FSDP
+
+# currently supported task_type can be either CAUSAL_LM or SEQ_2_SEQ_LM
+task_type: "CAUSAL_LM"
+
+dtype: bfloat16
+low_cpu_mem_usage: false
+
+use_lora: true
+lora_config:
+  r: 8
+  lora_alpha: 32
+  lora_dropout: 0.1

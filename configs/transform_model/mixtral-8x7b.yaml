@@ -1,0 +1,7 @@
+# ONLY USED FOR INFERENCE
+model_name_or_path: mistralai/Mixtral-8x7B-v0.1
+tokenizer_name: mistralai/Mixtral-8x7B-v0.1
+
+task_type: "CAUSAL_LM"
+dtype: 4bits
+batch_size: 16

@@ -1,0 +1,15 @@
+model_name_or_path: meta-llama/Llama-2-7b-hf
+tokenizer_name: meta-llama/Llama-2-7b-hf
+block_name: LlamaDecoderLayer
+
+# currently supported task_type can be either CAUSAL_LM or SEQ_2_SEQ_LM
+task_type: "CAUSAL_LM"
+
+dtype: bfloat16
+low_cpu_mem_usage: false
+
+use_lora: true
+lora_config:
+  r: 8
+  lora_alpha: 32
+  lora_dropout: 0.1

@@ -1,0 +1,19 @@
+model_name_or_path: distilgpt2
+tokenizer_name: distilgpt2
+
+# currently supported task_type can be either CAUSAL_LM or SEQ_2_SEQ_LM
+task_type: "CAUSAL_LM"
+
+dtype: float32
+low_cpu_mem_usage: false
+
+use_lora: false
+lora_config:
+        r: 8
+        lora_alpha: 32
+        lora_dropout: 0.1
+
+
+
+
+
