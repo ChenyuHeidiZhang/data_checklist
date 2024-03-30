@@ -1,23 +1,6 @@
 
 import pycld2 as cld2
 
-# def get_non_english(text):
-#     text = text.encode('utf-8')
-#     _, _, _, lang_vecs = cld2.detect(text, returnVectors=True)
-#     print(lang_vecs)
-#     to_get = []
-#     for vec in lang_vecs:
-#         if vec[-1] != 'en':
-#             to_get.append((vec[0], vec[0]+vec[1]))
-#     # new_text = ''
-#     new_text = b''
-#     for start, end in to_get:
-#         new_text += text[start:end] # + ' '
-
-#     # print(new_text)
-#     print(new_text.decode('utf-8'))
-#     return new_text
-
 def get_non_english(text):
     text = text.encode('utf-8')
     _, _, _, lang_vecs = cld2.detect(text, returnVectors=True)
